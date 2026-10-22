@@ -8,3 +8,5 @@ header{justify-content:flex-end}
 .project{display:flex;flex-direction:column}.project>div{display:flex;flex-direction:column;flex:1}.project .tags{margin-top:auto;padding-top:20px}.project h3{margin-top:0}.project.compact{display:flex}
 
 header{justify-content:center}nav{justify-content:center;flex-wrap:wrap;align-items:center}.nav-contact{display:inline-flex}@media(max-width:620px){nav{width:100%;justify-content:center;gap:16px}.nav-contact{display:inline-flex}}@media(max-width:380px){nav{justify-content:center;gap:12px}}
+
+.project .tags{min-height:90px;align-items:flex-start;align-content:flex-start}
