@@ -4,3 +4,9 @@ Thumbs.db
 node_modules/
 .env
 .env.*
+
+# Local originals and verification tools
+originals/
+tools/
+*.zip
+*.tar.gz
