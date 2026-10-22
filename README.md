@@ -54,3 +54,9 @@ The résumé omits the phone number and home address. The site and certificates 
 - GitHub Pages: https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
 
 This independent package contains no Sites account configuration, Git history, deployment credentials, or development tools.
+
+## Visitor interactions
+
+The bottom heart button with “I am here” saves a toggle in the visitor's browser using localStorage. It does not collect visitor information or show a shared counter. Certificates open in a large dialog with zoom, original-file, and download controls. Escape or the close button closes the viewer.
+
+Public links: https://github.com/Defnotgil and https://vercel.com/tkzynx.
