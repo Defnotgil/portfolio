@@ -4,3 +4,5 @@
 .portrait{width:100%;max-width:408px;justify-self:end}.portrait img{max-height:none}@media(max-width:620px){.portrait{width:min(100%,340px);justify-self:center}.portrait img{max-height:340px}}
 
 header{justify-content:flex-end}
+
+.project{display:flex;flex-direction:column}.project>div{display:flex;flex-direction:column;flex:1}.project .tags{margin-top:auto;padding-top:20px}.project h3{margin-top:0}.project.compact{display:flex}
