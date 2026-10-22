@@ -1,6 +1,6 @@
 # Gilbert Kilakiga — Professional Portfolio
 
-A responsive, static portfolio with five academic projects, technical skills, education, 25 certificates, and a downloadable PDF résumé. Built with HTML, CSS, and JavaScript. No installation, build, database, environment variables, or API keys required.
+A responsive, static portfolio with five academic projects, technical skills, education, 25 certificates, and a downloadable PDF résumé. Built with HTML, CSS, and JavaScript. The portfolio itself needs no build; the shared heart counter needs Vercel Functions and Redis configuration below.
 
 ## Upload to GitHub
 
@@ -55,8 +55,17 @@ The résumé omits the phone number and home address. The site and certificates 
 
 This independent package contains no Sites account configuration, Git history, deployment credentials, or development tools.
 
-## Visitor interactions
+## Shared visitor heart counter
 
-The bottom heart button with “I am here” saves a toggle in the visitor's browser using localStorage. It does not collect visitor information or show a shared counter. Certificates open in a large dialog with zoom, original-file, and download controls. Escape or the close button closes the viewer.
+The photo and portfolio run as static files. The shared counter requires Vercel Functions and an Upstash Redis database; GitHub Pages cannot run this endpoint.
+
+1. In your Vercel project, open Storage / Marketplace and connect Upstash Redis, or create a Redis database in the Upstash console.
+2. Add UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN to the project's Vercel environment variables for Production (and Preview if desired). Use the standard read/write REST token. Never commit the token.
+3. Redeploy the project after setting the variables. The api/hearts.js endpoint reads credentials on the server only.
+4. Visit the live portfolio in two browsers: a heart in one browser should appear in the total in the other after refresh. Clicking again removes that browser's heart. Repeated requests do not add duplicate hearts for the same visitor cookie.
+
+The counter begins at zero; old browser-local hearts are not migrated or presented as a shared total. When storage is unavailable the site shows a dash and an unavailable message. The count represents browser hearts, not verified unique people. A random, one-year HttpOnly cookie remembers each browser's heart.
+
+The portrait is cropped from the supplied image to 800 × 1000 WebP. On phones the image frame uses a square crop.
 
 Public links: https://github.com/Defnotgil and https://vercel.com/tkzynx.
